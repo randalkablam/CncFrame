@@ -150,6 +150,8 @@
     <ClInclude Include="GCode\Parser\GCodeParser.h" />
     <ClInclude Include="Drivers\StepperMotor\Stepper.h" />
     <ClCompile Include="Drivers\StepperMotor\Stepper.cpp" />
+    <ClInclude Include="GCode\Parser\Codes\ACodeProcessor.h" />
+    <ClCompile Include="GCode\Parser\Codes\ACodeProcessor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
