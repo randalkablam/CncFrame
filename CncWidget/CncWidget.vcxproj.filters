@@ -1,60 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\GCode">
-      <UniqueIdentifier>{1d3768de-5d30-4456-8c53-0edbc85d536d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Drivers">
+    <Filter Include="Drivers">
       <UniqueIdentifier>{19ba20fc-e161-4240-bfe6-5f4da8b44846}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Drivers\StepperMotor">
+    <Filter Include="Drivers\StepperMotor">
       <UniqueIdentifier>{528d8a8b-74b5-4ad8-8c25-52a97454f944}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GCode\Parser">
+    <Filter Include="GCode">
+      <UniqueIdentifier>{1d3768de-5d30-4456-8c53-0edbc85d536d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GCode\Parser">
       <UniqueIdentifier>{174a7b1d-5b6b-4261-b586-8bd58b688070}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\GCode\Parser\Codes">
+    <Filter Include="GCode\Parser\Codes">
       <UniqueIdentifier>{5209ce33-9b19-4a32-88a9-c4cac8f54253}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CncWidget.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Drivers\StepperMotor\Stepper.cpp">
+      <Filter>Drivers\StepperMotor</Filter>
     </ClCompile>
     <ClCompile Include="GCode\Parser\GCodeParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drivers\StepperMotor\Stepper.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>GCode\Parser</Filter>
     </ClCompile>
     <ClCompile Include="GCode\Parser\Codes\ACodeProcessor.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>GCode\Parser\Codes</Filter>
     </ClCompile>
+    <ClCompile Include="CncWidget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GCode\GCodeDefs.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Drivers\StepperMotor\Stepper.h">
+      <Filter>Drivers\StepperMotor</Filter>
     </ClInclude>
     <ClInclude Include="GCode\Parser\GCodeParser.h">
-      <Filter>Header Files</Filter>
+      <Filter>GCode\Parser</Filter>
     </ClInclude>
-    <ClInclude Include="Drivers\StepperMotor\Stepper.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="GCode\GCodeDefs.h">
+      <Filter>GCode</Filter>
     </ClInclude>
     <ClInclude Include="GCode\Parser\Codes\ACodeProcessor.h">
-      <Filter>Header Files</Filter>
+      <Filter>GCode\Parser\Codes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

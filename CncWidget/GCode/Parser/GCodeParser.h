@@ -1,5 +1,5 @@
 #pragma once
-#include "CncWidget/GCode/GCodeDefs.h"
+#include "GCode/GCodeDefs.h"
 #include <string>
 #include <vector>
 #include <istream>
