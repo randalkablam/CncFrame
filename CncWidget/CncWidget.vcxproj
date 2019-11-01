@@ -1,4 +1,4 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -26,7 +26,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -39,7 +39,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -87,11 +87,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\apolnik\source\repos\CncFrame\CncWidget;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\apolnik\source\repos\CncFrame\MessengerFrame;C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer;C:\Users\apolnik\source\repos\CncFrame\CncWidget;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ForceFileOutput>MultiplyDefinedSymbolOnly</ForceFileOutput>
+      <AdditionalLibraryDirectories>C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -102,10 +104,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\apolnik\source\repos\CncFrame\CncWidget;C:\Users\apolnik\source\repos\CncFrame\MessengerFrame;C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ForceFileOutput>MultiplyDefinedSymbolOnly</ForceFileOutput>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -118,6 +123,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\apolnik\source\repos\CncFrame\CncWidget;C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer;C:\Users\apolnik\source\repos\CncFrame\MessengerFrame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,14 +151,106 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CadProcessor\CadProcessor.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Math\Expression.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\FCodeProcessor.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\GCodeProcessor.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\MCodeProcessor.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\SCodeProcessor.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\TCodeProcessor.cpp" />
+    <ClCompile Include="CadProcessor\GCode\Parser\GCodeParser.cpp" />
+    <ClCompile Include="CameraProc\CameraProc.cpp" />
     <ClCompile Include="CncWidget.cpp" />
-    <ClInclude Include="GCode\GCodeDefs.h" />
-    <ClCompile Include="GCode\Parser\GCodeParser.cpp" />
-    <ClInclude Include="GCode\Parser\GCodeParser.h" />
+    <ClCompile Include="Drivers\Axis\AxisConfigMsg.cpp" />
+    <ClCompile Include="Drivers\Axis\AxisY.cpp" />
+    <ClCompile Include="Drivers\Axis\AxisZ.cpp" />
+    <ClCompile Include="Drivers\Axis\MoveMsg.cpp" />
+    <ClCompile Include="Drivers\DriverBase.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioAddMsg.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioDriver.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioLockReply.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioLockRequest.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioManager.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioRemoveMsg.cpp" />
+    <ClCompile Include="Drivers\GPIO\GpioValueMsg.cpp" />
+    <ClCompile Include="Drivers\I2C\I2cDriver.cpp" />
+    <ClCompile Include="Drivers\MachineInterface.cpp" />
+    <ClCompile Include="Drivers\Pump\Pump.cpp" />
+    <ClCompile Include="Drivers\Pump\PumpConfigMsg.cpp" />
+    <ClCompile Include="Drivers\Valve\Valve.cpp" />
+    <ClCompile Include="Drivers\Valve\ValveConfigMsg.cpp" />
+    <ClCompile Include="FileManager\FileManager.cpp" />
+    <ClCompile Include="FileManager\FileReply.cpp" />
+    <ClCompile Include="FileManager\FileRequest.cpp" />
+    <ClCompile Include="FileManager\GetFileMapping.cpp" />
+    <ClCompile Include="FileManager\SetFileMapping.cpp" />
+    <ClCompile Include="Logger\LogManager.cpp" />
+    <ClCompile Include="MotionController\MotionController.cpp" />
+    <ClCompile Include="PnpMaster\Configuration\ConfigurationMessage.cpp" />
+    <ClCompile Include="PnpMaster\Configuration\ConfigurationMgr.cpp" />
+    <ClCompile Include="PnpMaster\Controller.cpp" />
+    <ClCompile Include="ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="Utils\MathUtils.cpp" />
+    <ClCompile Include="Utils\PnpDefs.cpp" />
+    <ClInclude Include="CadProcessor\CadProcessor.h" />
+    <ClInclude Include="CadProcessor\GCode\GCodeDefs.h" />
+    <ClInclude Include="CadProcessor\GCode\Math\Expression.h" />
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\FCodeProcessor.h" />
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\GCodeProcessor.h" />
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\MCodeProcessor.h" />
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\SCodeProcessor.h" />
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\TCodeProcessor.h" />
+    <ClInclude Include="CadProcessor\GCode\Parser\GCodeParser.h" />
+    <ClInclude Include="CameraProc\CameraProc.h" />
+    <ClInclude Include="Drivers\Axis\AxisConfigMsg.h" />
+    <ClInclude Include="Drivers\Axis\AxisGeneric.h" />
+    <ClInclude Include="Drivers\Axis\AxisX.h" />
+    <ClInclude Include="Drivers\Axis\AxisY.h" />
+    <ClInclude Include="Drivers\Axis\AxisZ.h" />
+    <ClInclude Include="Drivers\Axis\MoveMsg.h" />
+    <ClInclude Include="Drivers\DcMotor\DcMotor.h" />
+    <ClInclude Include="Drivers\DriverBase.h" />
+    <ClInclude Include="Drivers\Encoder\Encoder.h" />
+    <ClInclude Include="Drivers\GPIO\GpioAddMsg.h" />
+    <ClInclude Include="Drivers\GPIO\GpioDriver.h" />
+    <ClInclude Include="Drivers\GPIO\GpioLockReply.h" />
+    <ClInclude Include="Drivers\GPIO\GpioLockRequest.h" />
+    <ClInclude Include="Drivers\GPIO\GpioManager.h" />
+    <ClInclude Include="Drivers\GPIO\GpioRemoveMsg.h" />
+    <ClInclude Include="Drivers\GPIO\GpioValueMsg.h" />
+    <ClInclude Include="Drivers\I2C\I2cDriver.h" />
+    <ClInclude Include="Drivers\MachineInterface.h" />
+    <ClInclude Include="Drivers\Pump\Pump.h" />
+    <ClInclude Include="Drivers\Pump\PumpConfigMsg.h" />
+    <ClInclude Include="Drivers\Valve\Valve.h" />
+    <ClInclude Include="Drivers\Valve\ValveConfigMsg.h" />
+    <ClInclude Include="FileManager\FileManager.h" />
+    <ClCompile Include="Drivers\Axis\AxisGeneric.cpp" />
+    <ClCompile Include="Drivers\Axis\AxisX.cpp" />
+    <ClCompile Include="Drivers\DcMotor\DcMotor.cpp" />
+    <ClCompile Include="Drivers\Encoder\Encoder.cpp" />
     <ClInclude Include="Drivers\StepperMotor\Stepper.h" />
     <ClCompile Include="Drivers\StepperMotor\Stepper.cpp" />
-    <ClInclude Include="GCode\Parser\Codes\ACodeProcessor.h" />
-    <ClCompile Include="GCode\Parser\Codes\ACodeProcessor.cpp" />
+    <ClInclude Include="FileManager\GetFileMapping.h" />
+    <ClInclude Include="FileManager\SetFileMapping.h" />
+    <ClInclude Include="FileManager\FileReply.h" />
+    <ClInclude Include="FileManager\FileRequest.h" />
+    <ClInclude Include="Logger\LogManager.h" />
+    <ClInclude Include="MotionController\MotionController.h" />
+    <ClInclude Include="PnpMaster\Configuration\ConfigurationMessage.h" />
+    <ClInclude Include="PnpMaster\Configuration\ConfigurationMgr.h" />
+    <ClInclude Include="PnpMaster\Controller.h" />
+    <ClInclude Include="ResourceManager\ResourceManager.h" />
+    <ClInclude Include="Utils\MathUtils.h" />
+    <ClInclude Include="Utils\PnpDefs.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MessengerFrame\MessengerFrame.vcxproj">
+      <Project>{2e903669-1944-427e-bd58-9b87ec25c97d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OsAbstractionLayer\OsAbstractionLayer.vcxproj">
+      <Project>{2dd53cfc-d5f5-4f04-9390-f4b05bfdc293}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

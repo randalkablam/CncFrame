@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
+#include "CadProcessor/GCode/Parser/GCodeParser.h"
+#include <time.h>
 
 int main()
 {
     std::cout << "Hello World!\n"; 
+	clock_t tStart = clock();
+
+	for (int i = 0; i < 10; i++)
+	{
+		std::string testComment = "   (Msg hello) F1 #4=[SIN[6 * [4+1] * cos[#43**1]] * 3**[1 / cos[60]] + TAN[45]/[1]] i sA (Hello!) #[5 + 4 + 2 ** 3] (msg f)\n";
+		std::string invalidComment = " ((f))";
+		std::shared_ptr<GCodeParser> parser = GCodeParser::getGCodeParser();
+		*parser << testComment;
+	}
+	printf("Time taken: %.2fs\n", (double)(clock() - tStart) / CLOCKS_PER_SEC);
+
+	//*parser << invalidComment;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

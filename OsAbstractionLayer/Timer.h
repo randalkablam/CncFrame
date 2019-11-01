@@ -4,11 +4,14 @@
 class Timer
 {
 public:
-	Timer();
+	Timer(bool isPeriodic, uint64_t period);
 	~Timer();
 
 	bool m_isPeriodic;
 	uint64_t m_period;
+	
 
+private:
+	bool m_isActive;
 };
 

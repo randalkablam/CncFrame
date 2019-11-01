@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="MetaLib">
+      <UniqueIdentifier>{3137764d-d11f-4bdb-a02b-07a2f0452dd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MetaLib\detail">
+      <UniqueIdentifier>{f9244db8-f268-4b65-9ca2-376ae7a8f6c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MetaLib">
+      <UniqueIdentifier>{a41fec1c-ceb3-454d-9bb6-ae99d34a62e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MetaLib\detail">
+      <UniqueIdentifier>{4eb54f32-60bf-4e33-862f-f0810c5dd25f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IpCore.cpp">
@@ -42,8 +54,8 @@
     <ClCompile Include="Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TimerManager.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MetaLib\StringCast.cpp">
+      <Filter>MetaLib</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -77,8 +89,50 @@
     <ClInclude Include="Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TimerManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="MetaLib\detail\template_helpers.h">
+      <Filter>Header Files\MetaLib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\detail\MetaHolder.h">
+      <Filter>Header Files\MetaLib\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\CompactCast.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\JsonCast.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\Member.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\Meta.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\rapidxml.hpp">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\json.hpp">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\rapidxml_ext.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\rapidxml_print.hpp">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\rapidxml_iterators.hpp">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\rapidxml_utils.hpp">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\StringCast.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\XmlCast.h">
+      <Filter>Header Files\MetaLib</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaLib\magic_enum.hpp">
+      <Filter>Header Files\MetaLib</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

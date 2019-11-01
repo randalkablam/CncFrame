@@ -92,12 +92,14 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\apolnik\source\repos\CncFrame\FreeRTOS\lib\include;C:\Users\apolnik\source\repos\CncFrame\FreeRTOS\lib\FreeRTOS-Plus-TCP\include;C:\Users\apolnik\source\repos\CncFrame\MessengerFrame;C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ForceFileOutput>MultiplyDefinedSymbolOnly</ForceFileOutput>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -109,10 +111,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\apolnik\source\repos\CncFrame\CncWidget;C:\Users\apolnik\source\repos\CncFrame\OsAbstractionLayer;C:\Users\apolnik\source\repos\CncFrame\MessengerFrame;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,15 +161,24 @@
   <ItemGroup>
     <ClCompile Include="FreeRtosTest.cpp" />
     <ClCompile Include="ManagerTest.cpp" />
+    <ClCompile Include="MessageTest.cpp" />
+    <ClCompile Include="MotorTest.cpp" />
+    <ClCompile Include="NetworkTest.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="ThreadTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FreeRtosTest.h" />
     <ClInclude Include="ManagerTest.h" />
+    <ClInclude Include="MessageTest.h" />
+    <ClInclude Include="MotorTest.h" />
+    <ClInclude Include="NetworkTest.h" />
     <ClInclude Include="ThreadTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CncWidget\CncWidget.vcxproj">
+      <Project>{72cc85ca-ecdf-4d42-bb20-f76145d4decf}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\FreeRTOS\demos\pc\windows\visual_studio\aws_demos.vcxproj">
       <Project>{c686325e-3261-42f7-aeb1-dde5280e1ceb}</Project>
     </ProjectReference>

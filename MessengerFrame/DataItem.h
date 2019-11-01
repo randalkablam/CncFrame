@@ -1,8 +1,16 @@
 #pragma once
-class DataItem
+#include "Message.h"
+
+
+
+class DataItem : public Message
 {
 public:
 	DataItem();
 	~DataItem();
+	uint32_t getUid();
+	
+private:
+
 };
 

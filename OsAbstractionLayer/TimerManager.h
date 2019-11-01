@@ -2,6 +2,8 @@
 #include "Timer.h"
 #include <map>
 #include <vector>
+#include "Location.h"
+
 class TimerManager
 {
 public:
@@ -15,7 +17,7 @@ private:
 	// have many timers operating at once. std::map uses RB tree
 	// which has log(n) lookup/insertion times.
 	// Cleaner to implement and possibly not worse than a hash table
-	typedef std::vector<Timer*> TimerVec_t;
+	typedef std::vector<std::pair<Timer*, Location*>> TimerVec_t;
 	typedef std::map<uint64_t, TimerVec_t> TimerMap_t;
 	
 	// Maps time the timer goes off to the actual timer

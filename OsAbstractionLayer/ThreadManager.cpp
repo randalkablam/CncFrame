@@ -88,7 +88,8 @@ bool ThreadManager::waitOnThreads()
 {
 	bool ret = false;
 
-#ifdef OS_WINDOWS || defined OS_LINUX
+#ifdef OS_RTOS
+#else
 
 	ThreadMap_t::iterator it(m_threadMap.begin());
 	ThreadMap_t::iterator endIt(m_threadMap.end());
@@ -103,7 +104,6 @@ bool ThreadManager::waitOnThreads()
 		i++;
 	}
 
-#elif defined OS_RTOS
 
 
 #endif

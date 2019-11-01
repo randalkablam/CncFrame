@@ -7,40 +7,343 @@
     <Filter Include="Drivers\StepperMotor">
       <UniqueIdentifier>{528d8a8b-74b5-4ad8-8c25-52a97454f944}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GCode">
+    <Filter Include="Drivers\Axis">
+      <UniqueIdentifier>{9ba49edc-b59a-4ee3-b42c-2339aac3381b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drivers\DcMotor">
+      <UniqueIdentifier>{beda116e-05db-4f7b-97c4-87611db84a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drivers\Encoder">
+      <UniqueIdentifier>{7f8c40d4-22ba-4fbd-938c-5cf9071fd0b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drivers\I2C">
+      <UniqueIdentifier>{9ee4ed90-3014-4ac5-a13d-9741f4778d78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drivers\GPIO">
+      <UniqueIdentifier>{be2eb369-a1ee-4862-81db-92033c627ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MotionController">
+      <UniqueIdentifier>{031ddcfb-0cb4-4be6-803f-26d29f32c840}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PnpMaster">
+      <UniqueIdentifier>{5ce2ee49-fb6f-45b1-b9ea-c77cd3de9d59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{a7cf4999-16c3-407e-8789-0138b011c872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FileManager">
+      <UniqueIdentifier>{878f3f6b-0791-4a16-8a7e-c775588c4248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CameraProc">
+      <UniqueIdentifier>{969fa94e-1208-471f-ad3e-d03639d43fdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadProcessor">
+      <UniqueIdentifier>{98e25c34-7486-4190-b6f1-b77b56be0a40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadProcessor\GCode">
       <UniqueIdentifier>{1d3768de-5d30-4456-8c53-0edbc85d536d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GCode\Parser">
+    <Filter Include="CadProcessor\GCode\Parser">
       <UniqueIdentifier>{174a7b1d-5b6b-4261-b586-8bd58b688070}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GCode\Parser\Codes">
+    <Filter Include="CadProcessor\GCode\Parser\Codes">
       <UniqueIdentifier>{5209ce33-9b19-4a32-88a9-c4cac8f54253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadProcessor\GCode\Math">
+      <UniqueIdentifier>{bd2b8228-70fb-47a9-92ab-6d4bfe2226ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager">
+      <UniqueIdentifier>{4e388dff-c4c3-4106-b967-8a7993a30860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Logger">
+      <UniqueIdentifier>{b9b89074-15ad-4b18-908d-adbe0310d500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PnpMaster\Configuration">
+      <UniqueIdentifier>{a1f26b84-43bb-4f91-80c9-ead6f08e12d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drivers\Valve">
+      <UniqueIdentifier>{e70515a6-e369-46ec-9f4b-1b042f46df8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drivers\Pump">
+      <UniqueIdentifier>{9848e80f-6bee-4614-a20a-36fc4d3a6eca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Drivers\StepperMotor\Stepper.cpp">
       <Filter>Drivers\StepperMotor</Filter>
     </ClCompile>
-    <ClCompile Include="GCode\Parser\GCodeParser.cpp">
-      <Filter>GCode\Parser</Filter>
-    </ClCompile>
-    <ClCompile Include="GCode\Parser\Codes\ACodeProcessor.cpp">
-      <Filter>GCode\Parser\Codes</Filter>
-    </ClCompile>
     <ClCompile Include="CncWidget.cpp" />
+    <ClCompile Include="Drivers\Axis\AxisGeneric.cpp">
+      <Filter>Drivers\Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\DcMotor\DcMotor.cpp">
+      <Filter>Drivers\DcMotor</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Encoder\Encoder.cpp">
+      <Filter>Drivers\Encoder</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Axis\AxisX.cpp">
+      <Filter>Drivers\Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="PnpMaster\Controller.cpp">
+      <Filter>PnpMaster</Filter>
+    </ClCompile>
+    <ClCompile Include="MotionController\MotionController.cpp">
+      <Filter>MotionController</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\MachineInterface.cpp">
+      <Filter>Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraProc\CameraProc.cpp">
+      <Filter>CameraProc</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager\FileManager.cpp">
+      <Filter>FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\FCodeProcessor.cpp">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\GCodeProcessor.cpp">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\MCodeProcessor.cpp">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\SCodeProcessor.cpp">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Parser\Codes\TCodeProcessor.cpp">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Parser\GCodeParser.cpp">
+      <Filter>CadProcessor\GCode\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\GCode\Math\Expression.cpp">
+      <Filter>CadProcessor\GCode\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="CadProcessor\CadProcessor.cpp">
+      <Filter>CadProcessor</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\DriverBase.cpp">
+      <Filter>Drivers</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioDriver.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\I2C\I2cDriver.cpp">
+      <Filter>Drivers\I2C</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger\LogManager.cpp">
+      <Filter>Logger</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioManager.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioAddMsg.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioRemoveMsg.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioLockReply.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioLockRequest.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\GPIO\GpioValueMsg.cpp">
+      <Filter>Drivers\GPIO</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\PnpDefs.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="PnpMaster\Configuration\ConfigurationMgr.cpp">
+      <Filter>PnpMaster\Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="PnpMaster\Configuration\ConfigurationMessage.cpp">
+      <Filter>PnpMaster\Configuration</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager\FileReply.cpp">
+      <Filter>FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager\FileRequest.cpp">
+      <Filter>FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager\GetFileMapping.cpp">
+      <Filter>FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager\SetFileMapping.cpp">
+      <Filter>FileManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Axis\AxisY.cpp">
+      <Filter>Drivers\Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Axis\AxisZ.cpp">
+      <Filter>Drivers\Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Axis\MoveMsg.cpp">
+      <Filter>Drivers\Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Axis\AxisConfigMsg.cpp">
+      <Filter>Drivers\Axis</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Valve\Valve.cpp">
+      <Filter>Drivers\Valve</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Valve\ValveConfigMsg.cpp">
+      <Filter>Drivers\Valve</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Pump\Pump.cpp">
+      <Filter>Drivers\Pump</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\Pump\PumpConfigMsg.cpp">
+      <Filter>Drivers\Pump</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\MathUtils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drivers\StepperMotor\Stepper.h">
       <Filter>Drivers\StepperMotor</Filter>
     </ClInclude>
-    <ClInclude Include="GCode\Parser\GCodeParser.h">
-      <Filter>GCode\Parser</Filter>
+    <ClInclude Include="Drivers\Axis\AxisGeneric.h">
+      <Filter>Drivers\Axis</Filter>
     </ClInclude>
-    <ClInclude Include="GCode\GCodeDefs.h">
-      <Filter>GCode</Filter>
+    <ClInclude Include="Drivers\DcMotor\DcMotor.h">
+      <Filter>Drivers\DcMotor</Filter>
     </ClInclude>
-    <ClInclude Include="GCode\Parser\Codes\ACodeProcessor.h">
-      <Filter>GCode\Parser\Codes</Filter>
+    <ClInclude Include="Drivers\Encoder\Encoder.h">
+      <Filter>Drivers\Encoder</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Axis\AxisX.h">
+      <Filter>Drivers\Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="PnpMaster\Controller.h">
+      <Filter>PnpMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="MotionController\MotionController.h">
+      <Filter>MotionController</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\MachineInterface.h">
+      <Filter>Drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraProc\CameraProc.h">
+      <Filter>CameraProc</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager\FileManager.h">
+      <Filter>FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\FCodeProcessor.h">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\GCodeProcessor.h">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\MCodeProcessor.h">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\SCodeProcessor.h">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Parser\Codes\TCodeProcessor.h">
+      <Filter>CadProcessor\GCode\Parser\Codes</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Parser\GCodeParser.h">
+      <Filter>CadProcessor\GCode\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\Math\Expression.h">
+      <Filter>CadProcessor\GCode\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\GCode\GCodeDefs.h">
+      <Filter>CadProcessor\GCode</Filter>
+    </ClInclude>
+    <ClInclude Include="CadProcessor\CadProcessor.h">
+      <Filter>CadProcessor</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\DriverBase.h">
+      <Filter>Drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioDriver.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\I2C\I2cDriver.h">
+      <Filter>Drivers\I2C</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger\LogManager.h">
+      <Filter>Logger</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioManager.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioAddMsg.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioRemoveMsg.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioLockReply.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioLockRequest.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\GPIO\GpioValueMsg.h">
+      <Filter>Drivers\GPIO</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\PnpDefs.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PnpMaster\Configuration\ConfigurationMgr.h">
+      <Filter>PnpMaster\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="PnpMaster\Configuration\ConfigurationMessage.h">
+      <Filter>PnpMaster\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager\FileReply.h">
+      <Filter>FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager\FileRequest.h">
+      <Filter>FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager\SetFileMapping.h">
+      <Filter>FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager\GetFileMapping.h">
+      <Filter>FileManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Axis\AxisY.h">
+      <Filter>Drivers\Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Axis\AxisZ.h">
+      <Filter>Drivers\Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Axis\MoveMsg.h">
+      <Filter>Drivers\Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Axis\AxisConfigMsg.h">
+      <Filter>Drivers\Axis</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Valve\Valve.h">
+      <Filter>Drivers\Valve</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Valve\ValveConfigMsg.h">
+      <Filter>Drivers\Valve</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Pump\Pump.h">
+      <Filter>Drivers\Pump</Filter>
+    </ClInclude>
+    <ClInclude Include="Drivers\Pump\PumpConfigMsg.h">
+      <Filter>Drivers\Pump</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\MathUtils.h">
+      <Filter>Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

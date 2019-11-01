@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PnpGuiClass</class>
+ <widget class="QMainWindow" name="PnpGuiClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>546</width>
+    <height>325</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PnpGui</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>531</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>4</number>
+    </property>
+    <widget class="QWidget" name="motionTab">
+     <attribute name="title">
+      <string>Motion</string>
+     </attribute>
+     <widget class="QGraphicsView" name="cameraScreen">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>281</width>
+        <height>201</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSlider" name="yAxisSlider">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>0</y>
+        <width>16</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+     </widget>
+     <widget class="QSlider" name="xAxisSlider">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>281</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="xAxisSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>30</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>4</number>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="yAxisSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>90</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>4</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="homeBtn">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>190</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Home</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>10</y>
+        <width>69</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>X Axis</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>70</y>
+        <width>69</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Y Axis</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>130</y>
+        <width>69</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Z Axis</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="zAxisSpinBox">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>150</y>
+        <width>101</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="decimals">
+       <number>4</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="airOnBtn">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>30</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Air On</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="inventoryTab">
+     <attribute name="title">
+      <string>Inventory</string>
+     </attribute>
+     <widget class="QTableView" name="componentTableView">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>281</width>
+        <height>221</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="schematicTab">
+     <attribute name="title">
+      <string>Schematic</string>
+     </attribute>
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>331</width>
+        <height>221</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="bitTab">
+     <attribute name="title">
+      <string>BIT</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="cmdTab">
+     <attribute name="title">
+      <string>Prompt</string>
+     </attribute>
+     <widget class="QTextBrowser" name="cmdBrowser">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>521</width>
+        <height>191</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="cmdLine">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>521</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cmdDest">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>220</y>
+        <width>141</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="destLbl">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>220</y>
+        <width>47</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Dest Mgr</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>546</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen_Config"/>
+    <addaction name="actionNew_Config"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen_Config">
+   <property name="text">
+    <string>Open Config</string>
+   </property>
+  </action>
+  <action name="actionNew_Config">
+   <property name="text">
+    <string>New Config</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="PnpGui.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionNew_Config</sender>
+   <signal>triggered()</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>actionNewConfig()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>924</x>
+     <y>762</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_Config</sender>
+   <signal>triggered()</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>actionOpenConfig()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>911</x>
+     <y>787</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>airOnBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>actionAirOnClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>485</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>949</x>
+     <y>812</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>homeBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>actionHomeClick()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>358</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>894</x>
+     <y>823</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xAxisSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>actionXaxisMove()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>5</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1045</x>
+     <y>843</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yAxisSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>actionYaxisMove()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>292</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1178</x>
+     <y>827</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>zAxisSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>counterZAxis()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>214</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1027</x>
+     <y>851</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>yAxisSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>counterYAxis()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>383</x>
+     <y>155</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>865</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>xAxisSpinBox</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>counterXAxis()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>342</x>
+     <y>98</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>959</x>
+     <y>857</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cameraScreen</sender>
+   <signal>rubberBandChanged(QRect,QPointF,QPointF)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>dragView()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>166</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>981</x>
+     <y>879</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdLine</sender>
+   <signal>returnPressed()</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>cmdEntered()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1169</x>
+     <y>690</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdDest</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>PnpGuiClass</receiver>
+   <slot>cmdDestChanged()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>182</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1400</x>
+     <y>798</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>actionNewConfig()</slot>
+  <slot>actionOpenConfig()</slot>
+  <slot>actionAirOnClick()</slot>
+  <slot>actionHomeClick()</slot>
+  <slot>actionXaxisMove()</slot>
+  <slot>actionYaxisMove()</slot>
+  <slot>counterXAxis()</slot>
+  <slot>counterYAxis()</slot>
+  <slot>counterZAxis()</slot>
+  <slot>dragView()</slot>
+  <slot>cmdEntered()</slot>
+  <slot>cmdDestChanged()</slot>
+ </slots>
+</ui>

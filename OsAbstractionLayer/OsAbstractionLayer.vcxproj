@@ -39,7 +39,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -76,6 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -87,6 +88,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,11 +129,11 @@
     <ClCompile Include="IpCore.cpp" />
     <ClCompile Include="IpServer.cpp" />
     <ClCompile Include="IpUtils.cpp" />
+    <ClCompile Include="MetaLib\StringCast.cpp" />
     <ClCompile Include="Process.cpp" />
     <ClCompile Include="Thread.cpp" />
     <ClCompile Include="ThreadManager.cpp" />
     <ClCompile Include="Timer.cpp" />
-    <ClCompile Include="TimerManager.cpp" />
     <ClCompile Include="TimeUtils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,12 +141,26 @@
     <ClInclude Include="IpCore.h" />
     <ClInclude Include="IpServer.h" />
     <ClInclude Include="IpUtils.h" />
+    <ClInclude Include="MetaLib\CompactCast.h" />
+    <ClInclude Include="MetaLib\detail\MetaHolder.h" />
+    <ClInclude Include="MetaLib\detail\template_helpers.h" />
+    <ClInclude Include="MetaLib\json.hpp" />
+    <ClInclude Include="MetaLib\JsonCast.h" />
+    <ClInclude Include="MetaLib\magic_enum.hpp" />
+    <ClInclude Include="MetaLib\Member.h" />
+    <ClInclude Include="MetaLib\Meta.h" />
+    <ClInclude Include="MetaLib\rapidxml.hpp" />
+    <ClInclude Include="MetaLib\rapidxml_ext.h" />
+    <ClInclude Include="MetaLib\rapidxml_iterators.hpp" />
+    <ClInclude Include="MetaLib\rapidxml_print.hpp" />
+    <ClInclude Include="MetaLib\rapidxml_utils.hpp" />
+    <ClInclude Include="MetaLib\StringCast.h" />
+    <ClInclude Include="MetaLib\XmlCast.h" />
     <ClInclude Include="OsEnv.h" />
     <ClInclude Include="Process.h" />
     <ClInclude Include="Thread.h" />
     <ClInclude Include="ThreadManager.h" />
     <ClInclude Include="Timer.h" />
-    <ClInclude Include="TimerManager.h" />
     <ClInclude Include="TimeUtils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

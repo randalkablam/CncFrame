@@ -4,9 +4,22 @@
 #include <iostream>
 #include "ThreadTest.h"
 #include "ManagerTest.h"
+#include "NetworkTest.h"
+#include "MessageTest.h"
+#include "MotorTest.h"
+#ifdef OS_WINDOWS
+#pragma comment(lib, "ws2_32.lib")
+#endif
 
 int main()
 {
+#ifdef OS_WINDOWS
+	WSADATA wsaData;
+
+	DWORD wsaOk = WSAStartup(0x202, &wsaData);
+	if (wsaOk == 0)
+	{
+#endif
 
 
 	ThreadTest threadTester;
@@ -14,8 +27,23 @@ int main()
 
 	ManagerTest mgrTester;
 	mgrTester.runTest();
-	ThreadManager::getThreadManager()->waitOnThreads();
 
+	//NetworkTest nt;
+	//nt.runTest();
+
+	MessageTest msgTest;
+	msgTest.runTest();
+
+
+	MotorTest motorTest;
+	motorTest.testLoop();
+
+	ThreadManager::getThreadManager()->waitOnThreads();
+#ifdef OS_WINDOWS
+	
+		WSACleanup();
+	}
+#endif
 }
 
 

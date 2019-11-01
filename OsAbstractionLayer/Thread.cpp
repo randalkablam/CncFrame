@@ -54,11 +54,12 @@ bool Thread::startThread()
 			m_runPtr,
 			m_param
 		};
-#ifdef OS_WINDOWS || defined OS_LINUX
-
+#ifdef OS_WINDOWS
 		m_threadHandlePtr = new std::thread(m_runPtr, m_param);
-		
-	
+
+#elif OS_LINUX
+		m_threadHandlePtr = new std::thread(m_runPtr, m_param);
+
 		
 #elif defined OS_RTOS
 

@@ -3,6 +3,10 @@
 #include <IpClient.h>
 #include <IpServer.h>
 #include <vector>
+#include "TimerMsg.h"
+
+typedef TimerMsg SocketMgmtTimer_t;
+
 class NetworkManager : public Manager
 {
 public:
@@ -12,6 +16,7 @@ public:
 	bool RegisterServer(IpServer* server);
 	bool RemoveClient(IpClient* client);
 	bool RemoveServer(IpServer* server);
+	uint32_t connectionMaintenance(Message& tmr);
 
 protected:
 
@@ -24,15 +29,28 @@ protected:
 	typedef std::vector<IpServer*> ServerVec_t;
 
  
-	void Initialize();
+	void Start();
 	bool Run();
-	void Terminate();
+	void Stop();
 	
-	void CheckSocketHealth();
+	void checkClientHealth(IpClient* client);
+	void checkServerHealth(IpServer* server);
 
 	ClientVec_t m_clients;
 	ServerVec_t m_servers;
 
+	ClientVec_t m_newClients;
+	ServerVec_t m_newServers;
+	void initNewSockets();
+
+
 	fd_set m_sockSet;
+private:
+	void serviceClient(IpClient* client);
+	void serviceServer(IpServer* server, int32_t sd, IpServer::Connection_t& conn);
+
+	
+	const uint64_t SOCKET_SERVICE_PERIOD = 500; // 500ms
+
 };
 
