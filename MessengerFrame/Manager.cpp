@@ -41,6 +41,28 @@ Manager::Manager(const std::string& managerName) :
 
 }
 
+Manager::Manager(const std::string& managerName, Location loc) :
+	m_managerName(managerName),
+	m_msgReaderStarted(false),
+	m_runStarted(false),
+	tidRun(INVALID_TID),
+	tidMsg(INVALID_TID),
+	m_executionMutex(),
+	m_condVar(),
+	turnSemaphore(0),
+	m_location(loc),
+	m_mailbox(),
+	m_isStarted(false)
+{
+	ManagerBooter* mgrBooter = ManagerBooter::getManagerBooter();
+
+
+
+
+
+
+}
+
 
 Manager::~Manager()
 {
@@ -69,6 +91,9 @@ void Manager::StartManager()
 		tidRun = tm->createThread(ThreadRun, this);
 		tidMsg = tm->createThread(ThreadMsg, this);
 		m_isStarted = true;
+
+
+
 	}
 }
 
@@ -128,6 +153,22 @@ void Manager::StartRun()
 	{
 		m_runStarted = true;
 		Start();
+
+
+		NameServer* ns = NameServer::getNameServer();
+		ns->RegisterLocation(&m_location, &m_mailbox, m_managerName);
+
+
+		Slot* sl = new Slot(this);
+		sl->registerSlot(std::bind(&Manager::recvCmd, this, std::placeholders::_1));
+		CmdMessage msg;
+		addSlot(*sl, msg);
+
+		Slot* sl2 = new Slot(this);
+		sl2->registerSlot(std::bind(&Manager::recvHeartbeat, this, std::placeholders::_1));
+		HeartbeatMsg hbMsg;
+		addSlot(*sl2, hbMsg);
+
 		while (1)
 		{
 			while (0 == turnSemaphore)

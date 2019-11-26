@@ -13,6 +13,7 @@ MnsClient* MnsClient::getMnsClient(void)
 	if (nullptr == ms_mnsClientPtr)
 	{
 		ms_mnsClientPtr = new MnsClient();
+		ret = ms_mnsClientPtr;
 	}
 
 	return ret;

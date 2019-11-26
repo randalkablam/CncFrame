@@ -32,15 +32,15 @@ LocationMailBox* NameServer::getMailBox(Location* loc)
 }
 
 NameServer::NameServer() :
-	Manager("NameServer"),
+	Manager("NameServer", Location(SYS_ENV::LOCAL_IP, SYS_ENV::LOCAL_PORT, "NameServer")),
 	m_isMNS(checkIfMns()),
 	m_locationMap(),
 	m_nsLocation(SYS_ENV::LOCAL_IP, SYS_ENV::LOCAL_PORT, "NameServer"),
 	m_nsMailBox(),
 	m_dataMap(),
-	m_mailBoxMap()
+	m_mailBoxMap(),
+	m_locationAliveMap()
 {
-	RegisterLocation(&m_nsLocation, &m_nsMailBox, m_nsLocation.getName());
 	ThreadManager* tm = ThreadManager::getThreadManager();
 	tm->createThread(NameServerProc, nullptr);
 
@@ -88,7 +88,7 @@ bool NameServer::RegisterLocation(Location* loc, LocationMailBox* mailBox, const
 			m_nameMap.insert(std::pair<std::string, Location*>({ managerName, loc }));
 			m_locationMap.insert(std::pair<Location*, std::string>({ loc, managerName }));
 			m_mailBoxMap.insert(std::pair<Location*, LocationMailBox*>({ loc, mailBox }));
-			m_locationAliveMap.insert(std::pair<Location, bool>({*loc, true}));
+			m_locationAliveMap.push_back(std::pair<Location, bool>({*loc, true}));
 
 
 			ret = true;
@@ -174,7 +174,7 @@ std::string NameServer::getName(Location* loc)
 
 uint32_t NameServer::NameServerProc(void* param)
 {
-	bool ret = false;
+	uint32_t ret = 0;
 	bool isMns = NameServer::getNameServer()->checkIfMns();
 	if (isMns)
 	{
@@ -212,6 +212,8 @@ std::string NameServer::getLocalIp()
 
 void NameServer::Start()
 {
+	RegisterLocation(&m_nsLocation, &m_nsMailBox, m_nsLocation.getName());
+
 }
 
 bool NameServer::Run()

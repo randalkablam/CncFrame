@@ -19,7 +19,8 @@ public:
 	Location() :
 		m_ipAddress(""),
 		m_port(0),
-		m_mgrName("")
+		m_mgrName(""),
+		m_uid(0)
 	{}
 	Location(const std::string& managerName);
 	//Location(Location& loc)

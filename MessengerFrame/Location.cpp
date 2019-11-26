@@ -2,7 +2,11 @@
 #include "Message.h"
 #include "NameServer.h"
 
-Location::Location(const std::string& managerName)
+Location::Location(const std::string& managerName):
+	m_ipAddress(""),
+	m_port(0),
+	m_mgrName(""),
+	m_uid(0)
 {
 	NameServer* ns = NameServer::getNameServer();
 	m_port = ns->getLocalPort();

@@ -19,6 +19,8 @@ public:
 
 protected:
 	Manager(const std::string& managerName);
+	Manager(const std::string& managerName, Location loc);
+
 	~Manager();
 
 	virtual void Start() = 0;

@@ -64,7 +64,7 @@ private:
 	typedef std::map<Location*, LocationMailBox*> LocationBoxMap_t;
 
 	
-	typedef std::map<Location, bool> LocationAlive_t;
+	typedef std::vector<std::pair<Location, bool>> LocationAlive_t;
 
 	LocationAlive_t m_locationAliveMap;
 

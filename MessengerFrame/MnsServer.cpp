@@ -12,6 +12,7 @@ MnsServer* MnsServer::getMnsServer(void)
 	if (nullptr == ms_mnsServerPtr)
 	{
 		ms_mnsServerPtr = new MnsServer();
+		ret = ms_mnsServerPtr;
 	}
 
 	return ret;
