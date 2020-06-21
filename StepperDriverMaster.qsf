@@ -1,0 +1,163 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+# Date created = 15:54:10  May 30, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		StepperDriverMaster_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C5AT144A7
+set_global_assignment -name TOP_LEVEL_ENTITY TopLevelInterface
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:54:10  MAY 30, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 125
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH TestBench1 -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME TestBench1 -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id TestBench1
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME TestBench1 -section_id TestBench1
+set_global_assignment -name EDA_TEST_BENCH_FILE StepperTestBench.vhd -section_id TestBench1
+set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE GpioReader.vhd
+set_global_assignment -name VHDL_FILE LimitSwitchGroup.vhd
+set_global_assignment -name VHDL_FILE Debounce.vhd
+set_global_assignment -name VHDL_FILE DFlipFlop.vhd
+set_global_assignment -name VHDL_FILE ServoTestBench.vhd
+set_global_assignment -name VHDL_FILE ConfigProcessor.vhd
+set_global_assignment -name VHDL_FILE ServoGroup.vhd
+set_global_assignment -name VHDL_FILE TopLevelInterface.vhd
+set_global_assignment -name VHDL_FILE ServoDriver.vhd
+set_global_assignment -name VHDL_FILE RampGenTestBench.vhd
+set_global_assignment -name VHDL_FILE sp256x8.vhd
+set_global_assignment -name VHDL_FILE i2cSlave.vhd
+set_global_assignment -name VHDL_FILE Counter.vhd
+set_global_assignment -name SOURCE_FILE Counter.cmp
+set_global_assignment -name VHDL_FILE Common.vhd
+set_global_assignment -name VHDL_FILE StepperTestBench.vhd
+set_global_assignment -name VHDL_FILE StepperGroup.vhd
+set_global_assignment -name VHDL_FILE MaxStepperDriver.vhd
+set_global_assignment -name VHDL_FILE HalfAdder.vhd
+set_global_assignment -name VHDL_FILE RampGenerator.vhd
+set_global_assignment -name VHDL_FILE Demux.vhd
+set_location_assignment PIN_41 -to pulses[0]
+set_location_assignment PIN_42 -to pulses[1]
+set_location_assignment PIN_43 -to pulses[2]
+set_location_assignment PIN_44 -to pulses[3]
+set_location_assignment PIN_45 -to pulses[4]
+set_location_assignment PIN_48 -to pulses[5]
+set_location_assignment PIN_51 -to pulses[6]
+set_location_assignment PIN_52 -to pulses[7]
+set_location_assignment PIN_53 -to pulses[8]
+set_location_assignment PIN_55 -to pulses[9]
+set_location_assignment PIN_24 -to SCL
+set_location_assignment PIN_25 -to SDA
+set_location_assignment PIN_118 -to limitSwitchIn[0]
+set_location_assignment PIN_119 -to limitSwitchIn[1]
+set_location_assignment PIN_120 -to limitSwitchIn[2]
+set_location_assignment PIN_121 -to limitSwitchIn[3]
+set_location_assignment PIN_122 -to limitSwitchIn[4]
+set_location_assignment PIN_125 -to limitSwitchIn[5]
+set_location_assignment PIN_126 -to limitSwitchIn[6]
+set_location_assignment PIN_129 -to limitSwitchIn[7]
+set_location_assignment PIN_132 -to limitSwitchIn[8]
+set_location_assignment PIN_133 -to limitSwitchIn[9]
+set_location_assignment PIN_134 -to limitSwitchIn[10]
+set_location_assignment PIN_135 -to limitSwitchIn[11]
+set_location_assignment PIN_136 -to limitSwitchIn[12]
+set_location_assignment PIN_137 -to limitSwitchIn[13]
+set_location_assignment PIN_139 -to limitSwitchIn[14]
+set_location_assignment PIN_141 -to limitSwitchIn[15]
+set_location_assignment PIN_142 -to limitSwitchIn[16]
+set_location_assignment PIN_143 -to limitSwitchIn[17]
+set_location_assignment PIN_32 -to limitSwitchIn[18]
+set_location_assignment PIN_115 -to limitSwitchIn[19]
+set_location_assignment PIN_114 -to limitSwitchIn[20]
+set_location_assignment PIN_113 -to limitSwitchIn[21]
+set_location_assignment PIN_112 -to limitSwitchIn[22]
+set_location_assignment PIN_104 -to limitSwitchIn[23]
+set_location_assignment PIN_73 -to pulses[10]
+set_location_assignment PIN_74 -to pulses[11]
+set_location_assignment PIN_75 -to pulses[12]
+set_location_assignment PIN_79 -to pulses[13]
+set_location_assignment PIN_80 -to pulses[14]
+set_location_assignment PIN_81 -to pulses[15]
+set_location_assignment PIN_86 -to stepperDir[9]
+set_location_assignment PIN_87 -to stepperDir[8]
+set_location_assignment PIN_92 -to stepperDir[7]
+set_location_assignment PIN_93 -to stepperDir[6]
+set_location_assignment PIN_94 -to stepperDir[5]
+set_location_assignment PIN_96 -to stepperDir[4]
+set_location_assignment PIN_97 -to stepperDir[3]
+set_location_assignment PIN_99 -to stepperDir[2]
+set_location_assignment PIN_100 -to stepperDir[1]
+set_location_assignment PIN_101 -to stepperDir[0]
+set_location_assignment PIN_103 -to stepperEn[9]
+set_location_assignment PIN_28 -to stepperEn[8]
+set_location_assignment PIN_30 -to stepperEn[7]
+set_location_assignment PIN_3 -to stepperEn[6]
+set_location_assignment PIN_4 -to stepperEn[5]
+set_location_assignment PIN_7 -to stepperEn[4]
+set_location_assignment PIN_8 -to stepperEn[3]
+set_location_assignment PIN_9 -to stepperEn[2]
+set_location_assignment PIN_26 -to stepperEn[1]
+set_location_assignment PIN_27 -to stepperEn[0]
+set_location_assignment PIN_65 -to servoFeedbackIO[5]
+set_location_assignment PIN_67 -to servoFeedbackIO[4]
+set_location_assignment PIN_69 -to servoFeedbackIO[3]
+set_location_assignment PIN_70 -to servoFeedbackIO[2]
+set_location_assignment PIN_71 -to servoFeedbackIO[1]
+set_location_assignment PIN_72 -to servoFeedbackIO[0]
+set_location_assignment PIN_59 -to UART_RX
+set_location_assignment PIN_60 -to UART_TX
+set_location_assignment PIN_47 -to relayControl[3]
+set_location_assignment PIN_57 -to relayControl[2]
+set_location_assignment PIN_58 -to relayControl[1]
+set_location_assignment PIN_31 -to relayControl[0]
+set_global_assignment -name ENABLE_SIGNALTAP ON
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
+set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
+set_global_assignment -name SLD_FILE "C:/altera/13.0/StepperDriver/output_files/stp1_auto_stripped.stp"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

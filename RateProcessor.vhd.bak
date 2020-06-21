@@ -1,0 +1,65 @@
+-- Set up rates via programmable interface
+
+
+USE work.Common.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+--use IEEE.std_logic_signed.all;
+--use IEEE.std_logic_unsigned.all;
+use ieee.numeric_std.ALL;
+
+--use IEEE.STD_LOGIC_ARITH.ALL;
+
+
+ENTITY RateProcessor IS
+PORT(
+	DIN : in std_logic;
+	DCLK : in std_logic;
+	RST  : in std_logic;
+	ADDR : in std_logic_vector(3 DOWNTO 0);
+	RATES: out RateMap(9 DOWNTO 0)
+);
+END RateProcessor;
+
+ARCHITECTURE SYN of RateProcessor IS
+
+signal dCountSig : integer range 0 to 23 := 0;
+signal addrIndexSig : integer range 0 to 15 := 0;
+signal rateSig : std_logic_vector (23 downto 0) := (others => '0');
+
+
+
+BEGIN
+
+RATES(addrIndexSig) <= rateSig;
+
+DataReadIn : process(DCLK, RST)
+begin
+
+	if RST = '0' then
+			dCountSig <= 0;
+			rateSig <= ((others => '0'));
+	elsif rising_edge(DCLK) then
+
+		if addrIndexSig < RateMap'high then
+			rateSig(23 downto 1) <= rateSig(22 downto 0);
+			rateSig(0) <= DIN;
+		end if;
+		dCountSig <= dCountSig + 1;
+		
+		
+	end if;
+		
+end process;	
+
+AddrProc : process(ADDR) 
+begin
+	addrIndexSig <= to_integer(unsigned(ADDR));
+	
+end process;
+
+
+
+
+
+END SYN;
